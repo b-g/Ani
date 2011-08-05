@@ -1,0 +1,326 @@
+* {
+	margin:0;
+	padding:0;
+	border:0;
+}
+
+
+body {
+	font-family : Lucida Grande, Verdana, Geneva, Arial, Helvetica, sans-serif; 
+	font-size : 100%; 
+    font-size : 12px;
+	font-weight : normal;
+	line-height	: normal;
+}
+
+#container {
+	margin-left:64px;
+	background-color: #fff;
+}
+
+#header {
+	float:left;
+	padding-bottom: 36px;
+	padding-top: 10px;
+}
+
+#content {
+	float:left;
+}
+
+#sidebar {
+	float:left;
+}
+
+/* Sidebar Items */
+
+#menu,
+#info,
+#reference,
+#cheatsheet,
+#source,
+#keywords {
+	border-top: 5px solid #333;
+	float:left;
+	width: 160px;
+	margin-bottom:10px;
+	padding-top:5px;
+	padding-left:1px;
+}
+#menu {
+	padding-bottom: 12px;
+}
+#menu .about{
+    background: url(img/color_about.png)  center right no-repeat !important;
+	padding-right: 20px !important;
+}
+#menu .download{
+    background: url(img/color_download.png)  center right no-repeat !important;
+	padding-right: 20px !important;
+}
+#menu .installation{
+    background: url(img/color_installation.png)  center right no-repeat !important;
+	padding-right: 20px !important;
+}
+#menu .examples{
+    background: url(img/color_examples.png)  center right no-repeat !important;
+	padding-right: 20px !important;
+}
+#menu .demos{
+    background: url(img/color_demos.png)  center right no-repeat !important;
+	padding-right: 20px !important;
+}
+#menu .reference{
+    background: url(img/color_reference.png)  center right no-repeat !important;
+	padding-right: 20px !important;
+}
+
+#container a.up,
+#container a.up:visited {
+	float: right;
+	border: 0px;
+	padding: 0px;
+	font-size : 10px;
+	text-decoration: none !important;
+	background-image: none;
+}
+
+/* Content Items */
+
+#about, #about_more,
+#download,
+#examples,
+#demos,
+#installation,
+#short_reference ,#ani , #anisequence, #aniconstants,
+#misc {
+	width:480px;
+	float:left;
+	margin-right:24px;
+	margin-bottom:20px;
+	padding:5px;
+	background-color:#fff;
+}
+
+#about .about_text_color {
+	color: #E8A100;
+}
+
+#about, #menu {
+	font-size: 20px;	
+}
+
+#about,#about_more {
+	border-top: 20px solid #E8A100;
+}
+
+#download {
+	border-top: 20px solid #95CBE8;
+}
+
+#installation {
+	border-top: 20px solid #BFD6A4;
+}
+
+#examples {
+	border-top: 20px solid #E6A9C4;
+}
+
+#demos {
+	border-top: 20px solid #A79DC5;
+}
+
+#short_reference, #ani, #anisequence, #aniconstants {
+	border-top: 20px solid #EBC29D;	
+}
+
+#misc {
+    border-top: 20px solid #A2A2A2;  
+}            
+
+
+.clear {
+	clear:both;
+}
+
+#footer {
+	padding-left:5px;
+	height:20px;
+	margin-bottom:32px;
+}
+
+
+ul {
+	list-style:none;
+	padding:0;
+	margin:0;
+}
+
+
+#menu ul li, #subMenu ul li {
+	float:left;
+	padding-right:6px; 
+}
+
+#menu li {
+    background-image: url(img/arr_big.png);
+    background-repeat: no-repeat;
+    padding-left:22px;
+    background-position: left center;
+}
+
+
+
+
+
+
+/* Headings */
+
+h1 {
+	font-size:2em;
+	font-weight:normal;
+}
+
+
+h3, h4, h5, th {
+	font-size:20px;
+	font-weight:normal;
+	margin-bottom:4px;
+}
+
+h2 {
+	font-size:20px;
+	font-weight:normal;
+	margin-bottom:4px;
+	float: left;
+}
+
+
+
+p { 
+	font-size:1em;
+	width:90%;
+	margin-bottom:16px;
+	clear:left;
+}
+
+
+pre, code {  
+	font-family:"Courier New", Courier, monospace; 
+	font-size:1em; 
+	line-height:normal;
+}
+
+
+
+
+hr {
+	border:0;
+	height:1px;
+	margin-bottom:24px;
+}
+
+a:link, a:visited {
+	text-decoration: none;
+	border-bottom: 1px solid #000;
+	font-weight: normal;
+    background-image: url(img/arr_small.png);
+    background-repeat: no-repeat;
+    padding-left:14px;
+    background-position: left center;
+    
+}
+
+#about a:link, #about a:visited  {
+    background-image: url(img/arr_big.png);
+    padding-left:22px;      
+}
+
+#menu a:link, #menu a:visited {
+    background-image: none;
+    padding: 0px;
+    border: none;
+}
+
+a:hover, 
+a:active {
+	text-decoration: none;
+	font-weight: normal;
+}
+
+
+
+
+
+
+img {
+	border: 0px solid #000000;
+}
+a.image-link, a.image-link {
+	border:none;
+	background-image:none;
+	padding:0;
+}
+
+
+/* COLORS */
+
+
+body {
+	color : #333;
+	background-color :#f0f0f0;
+}
+
+
+#header {
+	background-color:#f0f0f0;
+	color:#333;
+}
+
+
+#content {
+	background-color:#f0f0f0;	
+}
+
+
+
+h1, h2, h3, h4, h5, h6 {
+	color:#333;
+}
+
+
+pre, code {  
+	color: #000000;
+}
+
+
+a,strong {
+	color: #333;
+}
+
+
+a:hover, 
+a:active {
+	color: #333;
+}
+
+
+a:visited,
+a:link:visited {
+	color: #333;
+}
+
+
+#footer {
+	background-color:#f0f0f0;
+	color:#333;
+}
+
+
+#footer a, #menu a {
+	color:#333;
+}
+
+br {
+	clear: left;
+}

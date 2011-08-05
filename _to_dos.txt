@@ -1,0 +1,27 @@
+------------------------
+AniCore
+getSpeed();
+getAccleoration();
+ 
+------------------------
+Ani
+relative ‡ la +196 von der jetztigen position
+
+-------------------------
+AniText
+
+-------------------------
+Util
+heading()
+
+-------------------------
+demos
+
+-------------------------
+webseite
+*datum umbauen
+*hintergrund animation
+
+-------------------------
+custom easing
+custom easing editor
