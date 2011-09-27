@@ -41,7 +41,7 @@
 	<property name="libraryName"  value="Ani"/>
 	
 <!-- #### (8) give your library a name. edit value.   #### -->
-	<property name="versionNumber"  value="1.3"/>
+	<property name="versionNumber"  value="2.0"/>
 	
 <!-- #### (9) your contact url. edit value. #### -->
 	<property name="yourLink"  value="http://www.looksgood.de/" />

@@ -1,11 +1,22 @@
-----------------------------------------------------------------
+--------------------------------------------------------------------------
+Ani 2.0 - 27 September 2011
+
+Added
++ Possibility to have custom easings, based on greensock's customease 
+  class, see http://www.greensock.com/customease/
++ examples/Ani_Easing_Custom
+  
+Changes
+* refactoring of all easing parameters from type 'String' to type 'Easing'
+  
+--------------------------------------------------------------------------
 Ani 1.3 - 1 August 2011
 
 Added
-* library.properties
++ library.properties
   fix compatibility for the upcoming processing 2.0
 
-----------------------------------------------------------------
+--------------------------------------------------------------------------
 Ani 1.2 - 9 June 2010
 
 Performance improvement "under the hood" in AniCore: 
@@ -13,22 +24,22 @@ The updatePosition() function use no longer the java reflection
 mechanism ... which is good.
 
 
-----------------------------------------------------------------
+--------------------------------------------------------------------------
 Ani 1.1 - 8 June 2010
 
 Demos added
-* collage space
-* valentine drips player and recorder
++ collage space
++ valentine drips player and recorder
 
 New functions
-* Ani.killAll()
++ Ani.killAll()
   Stops and kills all references to ongoing animations
-* AniUtil.shortRotation()
++ AniUtil.shortRotation()
   calculates the minimal difference of two angles given in 
   radians (helpfull for animating angles)
 
 
-----------------------------------------------------------------
+--------------------------------------------------------------------------
 Ani 1.0 - 9 May 2010
 
 Initial release

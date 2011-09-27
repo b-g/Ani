@@ -37,7 +37,6 @@ package de.looksgood.ani.easing;
 
 public class Quint extends Easing {
 	public Quint(int theEasingMode){
-		this();
 		setMode(theEasingMode);
 	}
 	

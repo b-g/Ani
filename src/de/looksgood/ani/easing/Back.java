@@ -37,7 +37,6 @@ package de.looksgood.ani.easing;
 
 public class Back extends Easing {
 	public Back(int theEasingMode){
-		this();
 		setMode(theEasingMode);
 	}
 

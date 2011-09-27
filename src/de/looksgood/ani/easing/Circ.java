@@ -37,7 +37,6 @@ package de.looksgood.ani.easing;
 
 public class Circ extends Easing {
 	public Circ(int theEasingMode){
-		this();
 		setMode(theEasingMode);
 	}
 

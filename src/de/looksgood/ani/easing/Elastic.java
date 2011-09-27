@@ -37,7 +37,6 @@ package de.looksgood.ani.easing;
 
 public class Elastic extends Easing {
 	public Elastic(int theEasingMode){
-		this();
 		setMode(theEasingMode);
 	}
 	

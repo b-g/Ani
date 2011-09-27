@@ -66,9 +66,7 @@ public class AniCore implements AniConstants {
 	// stopwatch timer for pause and resume
 	private float pauseTime = 0;
 
-	private String easingName;
 	private Easing easing;
-	private Class<?> easingClass;
 	
 	private Method callbackStartMethod;
 	private Class<?> callbackStartParameterClass;
@@ -102,7 +100,7 @@ public class AniCore implements AniConstants {
 	 */
 	public AniCore(PApplet thePapplet, String theAutostart, Object theTargetObject,
 			float theDurationEasing, float theDurationDelay,
-			String theTargetObjectFieldName, float theEnd, String theEasing,
+			String theTargetObjectFieldName, float theEnd, Easing theEasing,
 			String theTimeMode, String theCallback) {
 
 		papplet = thePapplet;
@@ -512,33 +510,21 @@ public class AniCore implements AniConstants {
 	}
 
 	/**
-	 * Gets the name of the easing.
+	 * Gets the easing.
 	 * 
 	 * @return the easing name
 	 */
-	public String getEasing() {
-		return easingName;
+	public Easing getEasing() {
+		return easing;
 	}
 
 	/**
-	 * Sets the easing: LINEAR, QUAD_IN, QUAD_OUT, QUAD_IN_OUT, CUBIC_IN, CUBIC_IN_OUT, CUBIC_OUT, QUART_IN, QUART_OUT, QUART_IN_OUT, QUINT_IN, QUINT_OUT, QUINT_IN_OUT, SINE_IN, SINE_OUT, SINE_IN_OUT, CIRC_IN, CIRC_OUT, CIRC_IN_OUT, EXPO_IN, EXPO_OUT, EXPO_IN_OUT, BACK_IN, BACK_OUT, BACK_IN_OUT, BOUNCE_IN, BOUNCE_OUT, BOUNCE_IN_OUT, ELASTIC_IN, ELASTIC_OUT, ELASTIC_IN_OUT.
+	 * Sets the easing: LINEAR, QUAD_IN, QUAD_OUT, QUAD_IN_OUT, CUBIC_IN, CUBIC_IN_OUT, CUBIC_OUT, QUART_IN, QUART_OUT, QUART_IN_OUT, QUINT_IN, QUINT_OUT, QUINT_IN_OUT, SINE_IN, SINE_OUT, SINE_IN_OUT, CIRC_IN, CIRC_OUT, CIRC_IN_OUT, EXPO_IN, EXPO_OUT, EXPO_IN_OUT, BACK_IN, BACK_OUT, BACK_IN_OUT, BOUNCE_IN, BOUNCE_OUT, BOUNCE_IN_OUT, ELASTIC_IN, ELASTIC_OUT, ELASTIC_IN_OUT or use a Custom Easing.
 	 * 
-	 * @param theEasingName new name of the easing
+	 * @param theEasing
 	 */
-	public void setEasing(String theEasingName) {
-		easingName = theEasingName;
-		int index = easingName.indexOf("Easing");
-		String easingClassName = "de.looksgood.ani.easing."
-				+ firstCharToUpperCase(easingName.substring(0, index));
-		try {
-			easingClass = Class.forName(easingClassName);
-			easing = (Easing) easingClass.newInstance();
-			if (easingName.endsWith("In")) easing.setMode(IN);
-			else if (easingName.endsWith("InOut")) easing.setMode(IN_OUT);
-			else easing.setMode(OUT);	
-		} catch (Exception e) {
-			System.out.println(ANI_DEBUG_PREFIX+" Error @ AniCore. "+e);
-		}
+	public void setEasing(Easing theEasing) {
+		easing = theEasing;
 	}
 
 	/**
@@ -757,9 +743,5 @@ public class AniCore implements AniConstants {
 	 */
 	public boolean isPlaying() {
 		return isPlaying;
-	}
-
-	private String firstCharToUpperCase(String theC) {
-		return Character.toUpperCase(theC.charAt(0)) + theC.substring(1);
 	}
 }

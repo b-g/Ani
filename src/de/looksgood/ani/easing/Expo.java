@@ -37,7 +37,6 @@ package de.looksgood.ani.easing;
 
 public class Expo extends Easing {
 	public Expo(int theEasingMode){
-		this();
 		setMode(theEasingMode);
 	}
 	

@@ -28,12 +28,14 @@ Boston, MA 02110, USA
 
 package de.looksgood.ani;
 
+import de.looksgood.ani.easing.*;
+
 /**
  * All Constants of the Ani library.
  */
 public interface AniConstants {
 		
-		public static final String VERSION = "1.3";
+		public static final String VERSION = "2.0";
 		
 		// timeMode
 		public static final String SECONDS = "SECONDS";
@@ -65,36 +67,37 @@ public interface AniConstants {
 		public static final int OUT = 1;
 
 		// names of easings
-		public static final String LINEAR = "linearEasingNone";
-		public static final String QUAD_IN = "quadEasingIn";
-		public static final String QUAD_OUT = "quadEasingOut";
-		public static final String QUAD_IN_OUT = "quadEasingInOut";
-		public static final String CUBIC_IN = "cubicEasingIn";
-		public static final String CUBIC_IN_OUT = "cubicEasingInOut";
-		public static final String CUBIC_OUT = "cubicEasingOut";
-		public static final String QUART_IN = "quartEasingIn";
-		public static final String QUART_OUT = "quartEasingOut";
-		public static final String QUART_IN_OUT = "quartEasingInOut";
-		public static final String QUINT_IN = "quintEasingIn";
-		public static final String QUINT_OUT = "quintEasingOut";
-		public static final String QUINT_IN_OUT = "quintEasingInOut";
-		public static final String SINE_IN = "sineEasingIn";
-		public static final String SINE_OUT = "sineEasingOut";
-		public static final String SINE_IN_OUT = "sineEasingInOut";
-		public static final String CIRC_IN = "circEasingIn";
-		public static final String CIRC_OUT = "circEasingOut";
-		public static final String CIRC_IN_OUT = "circEasingInOut";
-		public static final String EXPO_IN = "expoEasingIn";
-		public static final String EXPO_OUT = "expoEasingOut";
-		public static final String EXPO_IN_OUT = "expoEasingInOut";
-		public static final String BACK_IN = "backEasingIn";
-		public static final String BACK_OUT = "backEasingOut";
-		public static final String BACK_IN_OUT = "backEasingInOut";
-		public static final String BOUNCE_IN = "bounceEasingIn";
-		public static final String BOUNCE_OUT = "bounceEasingOut";
-		public static final String BOUNCE_IN_OUT = "bounceEasingInOut";
-		public static final String ELASTIC_IN = "elasticEasingIn";
-		public static final String ELASTIC_OUT = "elasticEasingOut";
-		public static final String ELASTIC_IN_OUT = "elasticEasingInOut";
+		public static final Easing LINEAR =         new Linear();
+		public static final Easing QUAD_IN =        new Quad(IN);
+		public static final Easing QUAD_OUT =       new Quad(OUT);
+		public static final Easing QUAD_IN_OUT =    new Quad(IN_OUT);
+		public static final Easing CUBIC_IN =       new Cubic(IN);
+		public static final Easing CUBIC_IN_OUT =   new Cubic(OUT);
+		public static final Easing CUBIC_OUT =      new Cubic(IN_OUT);
+		public static final Easing QUART_IN =       new Quart(IN);
+		public static final Easing QUART_OUT =      new Quart(OUT);
+		public static final Easing QUART_IN_OUT =   new Quart(IN_OUT);
+		public static final Easing QUINT_IN =       new Quint(IN);
+		public static final Easing QUINT_OUT =      new Quint(OUT);
+		public static final Easing QUINT_IN_OUT =   new Quint(IN_OUT);
+		public static final Easing SINE_IN =        new Sine(IN);
+		public static final Easing SINE_OUT =       new Sine(OUT);
+		public static final Easing SINE_IN_OUT =    new Sine(IN_OUT);
+		public static final Easing CIRC_IN =        new Circ(IN);
+		public static final Easing CIRC_OUT =       new Circ(OUT);
+		public static final Easing CIRC_IN_OUT =    new Circ(IN_OUT);
+		public static final Easing EXPO_IN =        new Expo(IN);
+		public static final Easing EXPO_OUT =       new Expo(OUT);
+		public static final Easing EXPO_IN_OUT =    new Expo(IN_OUT);
+		public static final Easing BACK_IN =        new Back(IN);
+		public static final Easing BACK_OUT =       new Back(OUT);
+		public static final Easing BACK_IN_OUT =    new Back(IN_OUT);
+		public static final Easing BOUNCE_IN =      new Bounce(IN);
+		public static final Easing BOUNCE_OUT =     new Bounce(OUT);
+		public static final Easing BOUNCE_IN_OUT =  new Bounce(IN_OUT);
+		public static final Easing ELASTIC_IN =     new Elastic(IN);
+		public static final Easing ELASTIC_OUT =    new Elastic(OUT);
+		public static final Easing ELASTIC_IN_OUT = new Elastic(IN_OUT);
+		
 }
 
