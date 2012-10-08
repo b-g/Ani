@@ -35,13 +35,13 @@
 	<property name="author" value="Benedikt Gross"/>
 	
 <!-- #### (6) which copyright?  edit value.  #### -->
-	<property name="copyright" value="(c) 2011"/>
+	<property name="copyright" value="(c) 2012"/>
 
 <!-- #### (7) give your library a name. edit value.  #### -->
 	<property name="libraryName"  value="Ani"/>
 	
 <!-- #### (8) give your library a name. edit value.   #### -->
-	<property name="versionNumber"  value="2.0"/>
+	<property name="versionNumber"  value="2.2"/>
 	
 <!-- #### (9) your contact url. edit value. #### -->
 	<property name="yourLink"  value="http://www.looksgood.de/" />

@@ -365,8 +365,11 @@ public class AniCore implements AniConstants {
 		if (time < durationDelay) {
 			isDelaying = true;			
 			position = begin;
-			
 		} else {
+			if(isDelaying){
+				setBegin();
+				position = begin;
+			}
 			isDelaying = false;	
 			if (time >= durationTotal) {
 				if (isRepeating) {
@@ -384,8 +387,8 @@ public class AniCore implements AniConstants {
 			} else {
 				updatePosition();
 			}
+			updateTargetObjectField();
 		}
-		updateTargetObjectField();
 		//System.out.println("isEasing: "+isEasing+" isDelaying: "+isDelaying+" time: "+time+" position: "+position);
 	}
 
@@ -456,6 +459,7 @@ public class AniCore implements AniConstants {
 		isEnded = false;
 		// only use easing function to calc position if time > durationDelay
 		if (time < durationDelay) {			
+			//setBegin();
 			position = begin;
 		} else {
 			updatePosition();

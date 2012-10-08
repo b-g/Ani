@@ -35,7 +35,7 @@ import de.looksgood.ani.easing.*;
  */
 public interface AniConstants {
 		
-		public static final String VERSION = "2.0";
+		public static final String VERSION = "2.2";
 		
 		// timeMode
 		public static final String SECONDS = "SECONDS";
@@ -72,8 +72,8 @@ public interface AniConstants {
 		public static final Easing QUAD_OUT =       new Quad(OUT);
 		public static final Easing QUAD_IN_OUT =    new Quad(IN_OUT);
 		public static final Easing CUBIC_IN =       new Cubic(IN);
-		public static final Easing CUBIC_IN_OUT =   new Cubic(OUT);
-		public static final Easing CUBIC_OUT =      new Cubic(IN_OUT);
+		public static final Easing CUBIC_OUT =      new Cubic(OUT);
+		public static final Easing CUBIC_IN_OUT =   new Cubic(IN_OUT);
 		public static final Easing QUART_IN =       new Quart(IN);
 		public static final Easing QUART_OUT =      new Quart(OUT);
 		public static final Easing QUART_IN_OUT =   new Quart(IN_OUT);
