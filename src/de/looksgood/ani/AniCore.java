@@ -72,6 +72,8 @@ public class AniCore implements AniConstants {
 	private Class<?> callbackStartParameterClass;
 	private Method callbackFinishMethod;
 	private Class<?> callbackFinishParameterClass;
+	private Method callbackDelayMethod;
+	private Class<?> callbackDelayParameterClass;
 
 	private String playMode = FORWARD;
 	private String playDirection = FORWARD;
@@ -218,7 +220,7 @@ public class AniCore implements AniConstants {
 				String[] p = PApplet.split(PApplet.trim(propertyList[i]),':');
 
 				if (p.length == 2) {
-					if (p[0].equals(ON_START) || p[0].equals(ON_END)) {
+					if (p[0].equals(ON_START) || p[0].equals(ON_END) || p[0].equals(ON_DELAY_END)) {
 
 						// -- check and find methods --
 						String targetMethodName = p[1];
@@ -264,6 +266,9 @@ public class AniCore implements AniConstants {
 								} else if (p[0].equals(ON_END)) {
 									callbackFinishMethod = targetMethod;
 									callbackFinishParameterClass = tagetMethodParameterClass;
+								} else if (p[0].equals(ON_DELAY_END)) {
+									callbackDelayMethod = targetMethod;
+									callbackDelayParameterClass = tagetMethodParameterClass;
 								}
 							} catch (SecurityException e) {
 								printSecurityWarning(e);
@@ -298,6 +303,18 @@ public class AniCore implements AniConstants {
 				Object[] args = (callbackFinishParameterClass == null) ? new Object[] {}
 				: new Object[] { this };
 				callbackFinishMethod.invoke(targetObject, args);
+			} catch (Exception e) {
+				System.out.println(ANI_DEBUG_PREFIX+" Error @ AniCore -> dispatchOnFinish(). "+e);
+			}
+		}
+	}
+	
+	private void dispatchOnDelayEnd() {
+		if (callbackDelayMethod != null) {
+			try {
+				Object[] args = (callbackDelayParameterClass == null) ? new Object[] {}
+				: new Object[] { this };
+				callbackDelayMethod.invoke(targetObject, args);
 			} catch (Exception e) {
 				System.out.println(ANI_DEBUG_PREFIX+" Error @ AniCore -> dispatchOnFinish(). "+e);
 			}
@@ -369,6 +386,7 @@ public class AniCore implements AniConstants {
 			if(isDelaying){
 				setBegin();
 				position = begin;
+				dispatchOnDelayEnd();
 			}
 			isDelaying = false;	
 			if (time >= durationTotal) {
