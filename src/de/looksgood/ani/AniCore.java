@@ -75,7 +75,7 @@ public class AniCore implements AniConstants {
 
 	private String playMode = FORWARD;
 	private String playDirection = FORWARD;
-	private int repeatNumber; // inited in start()
+	private int repeatNumber; // on purpose, set in start()
 	private int repeatCount = 1;
 
 	private boolean isRepeating = false;
