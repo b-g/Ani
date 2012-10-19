@@ -1,4 +1,14 @@
 --------------------------------------------------------------------------
+Ani 2.4 - 19 October 2012
+
+Fix
+* Ani was not working correctly in combination with PVector. 
+  A big thank you to Till Nagel for spotting and reporting!
+
+New
++ examples/Ani_PVector
+
+--------------------------------------------------------------------------
 Ani 2.3 - 8 October 2012
 
 New

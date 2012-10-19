@@ -527,7 +527,8 @@ public class Ani extends AniCore {
 	// or overwrite an existing Ani with new parameters
 	private static Ani addAni(boolean theReverse, Object theTarget, float theDuration, float theDelay, String theFieldName, float theEnd, Easing theEasing, String theTimeMode, String theCallback){
 		cleanAnis();
-		String id = theTarget.toString() + "_" + theFieldName;
+		//String id = theTarget.toString() + "_" + theFieldName;
+		String id = System.identityHashCode(theTarget) + "_" + theFieldName;
 		
 		// get old Ani and overwrite (this is behavior is ignored if defaultAddMode is set to NO_OVERWRITE
 		if (anisLookup.containsKey(id) && defaultOverwriteMode == OVERWRITE) {
