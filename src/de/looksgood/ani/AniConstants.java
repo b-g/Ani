@@ -45,6 +45,7 @@ public interface AniConstants {
 		public static final String ON_START = "onStart";
 		public static final String ON_END = "onEnd";
 		public static final String ON_DELAY_END = "onDelayEnd";
+		public static final String ON_UPDATE = "onUpdate";
 
 		// playMode
 		public static final String FORWARD = "FORWARD";
