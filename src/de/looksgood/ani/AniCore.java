@@ -72,6 +72,8 @@ public class AniCore implements AniConstants {
 	private Class<?> callbackStartParameterClass;
 	private Method callbackFinishMethod;
 	private Class<?> callbackFinishParameterClass;
+	private Method callbackUpdateMethod;
+	private Class<?> callbackUpdateParameterClass;
 	private Method callbackDelayMethod;
 	private Class<?> callbackDelayParameterClass;
 
@@ -220,7 +222,7 @@ public class AniCore implements AniConstants {
 				String[] p = PApplet.split(PApplet.trim(propertyList[i]),':');
 
 				if (p.length == 2) {
-					if (p[0].equals(ON_START) || p[0].equals(ON_END) || p[0].equals(ON_DELAY_END)) {
+					if (p[0].equals(ON_START) || p[0].equals(ON_END) || p[0].equals(ON_DELAY_END) || p[0].equals(ON_UPDATE)) {
 
 						// -- check and find methods --
 						String targetMethodName = p[1];
@@ -269,6 +271,9 @@ public class AniCore implements AniConstants {
 								} else if (p[0].equals(ON_DELAY_END)) {
 									callbackDelayMethod = targetMethod;
 									callbackDelayParameterClass = tagetMethodParameterClass;
+								} else if (p[0].equals(ON_UPDATE)) {
+									callbackUpdateMethod = targetMethod;
+									callbackUpdateParameterClass = tagetMethodParameterClass;
 								}
 							} catch (SecurityException e) {
 								printSecurityWarning(e);
@@ -305,6 +310,18 @@ public class AniCore implements AniConstants {
 				callbackFinishMethod.invoke(targetObject, args);
 			} catch (Exception e) {
 				System.out.println(ANI_DEBUG_PREFIX+" Error @ AniCore -> dispatchOnFinish(). "+e);
+			}
+		}
+	}
+
+	private void dispatchOnUpdate() {
+		if (callbackUpdateMethod != null) {
+			try {
+				Object[] args = (callbackUpdateParameterClass == null) ? new Object[] {}
+				: new Object[] { this };
+				callbackUpdateMethod.invoke(targetObject, args);
+			} catch (Exception e) {
+				System.out.println(ANI_DEBUG_PREFIX+" Error @ AniCore -> dispatchOnUpdate(). "+e);
 			}
 		}
 	}
@@ -405,7 +422,9 @@ public class AniCore implements AniConstants {
 			} else {
 				updatePosition();
 			}
+
 			updateTargetObjectField();
+			dispatchOnUpdate();
 		}
 		//System.out.println("isEasing: "+isEasing+" isDelaying: "+isDelaying+" time: "+time+" position: "+position);
 	}
