@@ -21,7 +21,7 @@ void setup() {
   // Ani.init() must be called always first!
   Ani.init(this);
 
-  // define a Ani with callbacks, specify the method name after the keywords: onStart and onEnd 
+  // define a Ani with callbacks, specify the method name after the keywords: onStart, onEnd, onDelayEnd and onUpdate 
   diameterAni = new Ani(this, 1.5, "diameter", 150, Ani.EXPO_IN_OUT, "onStart:itsStarted, onEnd:newRandomDiameter");  
   
   // side info: it's also possible to define this in a static way

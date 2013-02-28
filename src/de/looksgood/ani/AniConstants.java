@@ -35,7 +35,7 @@ import de.looksgood.ani.easing.*;
  */
 public interface AniConstants {
 		
-		public static final String VERSION = "2.4";
+		public static final String VERSION = "2.5";
 		
 		// timeMode
 		public static final String SECONDS = "SECONDS";

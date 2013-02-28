@@ -1,4 +1,13 @@
 --------------------------------------------------------------------------
+Ani 2.5 - 28 February 2013
+
+New
++ Introduced new callback feature "onUpdate". 
+  Many thanks to Jean-Maxime Couillard!
++ examples/Ani_PVector_Easing_Styles
++ examples/Ani_TimeModes/
+
+--------------------------------------------------------------------------
 Ani 2.4 - 19 October 2012
 
 Fix

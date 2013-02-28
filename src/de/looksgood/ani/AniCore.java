@@ -209,9 +209,9 @@ public class AniCore implements AniConstants {
 	}
 
 	/**
-	 * setup the callback methods: onStart and onEnd.
+	 * setup the callback methods: onStart, onEnd, onDelayEnd and onUpdate
 	 * 
-	 * @param theCallback the names of the callbacks for onStart and onEnd
+	 * @param theCallback the names of the callbacks for onStart, onEnd, onDelayEnd and onUpdate
 	 */
 	public void setCallback(String theCallback) {
 		// ignore empty strings
