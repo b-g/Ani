@@ -1,6 +1,6 @@
 /*
 Ani (a processing animation library) 
-Copyright (c) 2010 Benedikt Gro§
+Copyright (c) 2010 Benedikt Groï¿½
 
 http://www.looksgood.de/libraries/Ani
 
@@ -103,7 +103,7 @@ public class Ani extends AniCore {
 	 * @param theEnd theEnd
 	 */
 	public Ani(Object theTarget, float theDuration, String theFieldName, float theEnd) {
-		super(papplet(), defaultAutostartMode, theTarget, theDuration, 0.0f, theFieldName, theEnd, defaultEasing, defaultTimeMode, defaultCallback);
+		super(papplet(), defaultAutostartMode, theTarget, theDuration, 0.0f, theFieldName, theEnd, defaultEasing, defaultTimeMode, theTarget, defaultCallback);
 	}
 	
 	/**
@@ -116,7 +116,7 @@ public class Ani extends AniCore {
 	 * @param theEnd theEnd
 	 */
 	public Ani(Object theTarget, float theDuration, float theDelay, String theFieldName, float theEnd) {
-		super(papplet(), defaultAutostartMode, theTarget, theDuration, theDelay, theFieldName, theEnd, defaultEasing, defaultTimeMode, defaultCallback);
+		super(papplet(), defaultAutostartMode, theTarget, theDuration, theDelay, theFieldName, theEnd, defaultEasing, defaultTimeMode, theTarget, defaultCallback);
 	}
 	
 	/**
@@ -129,7 +129,7 @@ public class Ani extends AniCore {
 	 * @param theEasing theEasing
 	 */
 	public Ani(Object theTarget, float theDuration, String theFieldName, float theEnd, Easing theEasing) {
-		super(papplet(), defaultAutostartMode, theTarget, theDuration, 0.0f, theFieldName, theEnd, theEasing, defaultTimeMode, defaultCallback);
+		super(papplet(), defaultAutostartMode, theTarget, theDuration, 0.0f, theFieldName, theEnd, theEasing, defaultTimeMode, theTarget, defaultCallback);
 	}
 	
 	/**
@@ -143,7 +143,7 @@ public class Ani extends AniCore {
 	 * @param theEasing theEasing
 	 */
 	public Ani(Object theTarget, float theDuration, float theDelay, String theFieldName, float theEnd, Easing theEasing) {
-		super(papplet(), defaultAutostartMode, theTarget, theDuration, theDelay, theFieldName, theEnd, theEasing, defaultTimeMode, defaultCallback);
+		super(papplet(), defaultAutostartMode, theTarget, theDuration, theDelay, theFieldName, theEnd, theEasing, defaultTimeMode, theTarget, defaultCallback);
 	}
 	
 	/**
@@ -157,7 +157,7 @@ public class Ani extends AniCore {
 	 * @param theCallback theCallback
 	 */
 	public Ani(Object theTarget, float theDuration, String theFieldName, float theEnd, Easing theEasing, String theCallback) {
-		super(papplet(), defaultAutostartMode, theTarget, theDuration, 0.0f, theFieldName, theEnd, theEasing, defaultTimeMode, theCallback);
+		super(papplet(), defaultAutostartMode, theTarget, theDuration, 0.0f, theFieldName, theEnd, theEasing, defaultTimeMode, theTarget, theCallback);
 	}
 	
 	/**
@@ -171,8 +171,8 @@ public class Ani extends AniCore {
 	 * @param theEasing theEasing
 	 * @param theCallback theCallback
 	 */
-	public Ani(Object theTarget, float theDuration, float theDelay, String theFieldName, float theEnd, Easing theEasing, String theCallback) {
-		super(papplet(), defaultAutostartMode, theTarget, theDuration, theDelay, theFieldName, theEnd, theEasing, defaultTimeMode, theCallback);
+	public Ani(Object theTarget, float theDuration, float theDelay, String theFieldName, float theEnd, Easing theEasing, Object theCallbackObject, String theCallback) {
+		super(papplet(), defaultAutostartMode, theTarget, theDuration, theDelay, theFieldName, theEnd, theEasing, defaultTimeMode, theCallbackObject, theCallback);
 	}
 
 
@@ -190,7 +190,7 @@ public class Ani extends AniCore {
 	 * @return ani
 	 */
 	public static Ani to(Object theTarget, float theDuration, String theFieldName, float theEnd){
-		return addAni(false, theTarget, theDuration, 0.0f, theFieldName, theEnd, defaultEasing, defaultTimeMode, defaultCallback);
+		return addAni(false, theTarget, theDuration, 0.0f, theFieldName, theEnd, defaultEasing, defaultTimeMode, theTarget, defaultCallback);
 	}
 	
 	/**
@@ -203,7 +203,7 @@ public class Ani extends AniCore {
 	 * @return ani
 	 */
 	public static Ani from(Object theTarget, float theDuration, String theFieldName, float theEnd){
-		return addAni(true, theTarget, theDuration, 0.0f, theFieldName, theEnd, defaultEasing, defaultTimeMode, defaultCallback);
+		return addAni(true, theTarget, theDuration, 0.0f, theFieldName, theEnd, defaultEasing, defaultTimeMode, theTarget, defaultCallback);
 	}
 	
 	/**
@@ -217,7 +217,7 @@ public class Ani extends AniCore {
 	 * @return ani
 	 */
 	public static Ani to(Object theTarget, float theDuration, float theDelay, String theFieldName, float theEnd){
-		return addAni(false, theTarget, theDuration, theDelay, theFieldName, theEnd, defaultEasing, defaultTimeMode, defaultCallback);
+		return addAni(false, theTarget, theDuration, theDelay, theFieldName, theEnd, defaultEasing, defaultTimeMode, theTarget, defaultCallback);
 	}
 	
 	/**
@@ -231,7 +231,7 @@ public class Ani extends AniCore {
 	 * @return ani
 	 */
 	public static Ani from(Object theTarget, float theDuration, float theDelay,  String theFieldName, float theEnd){
-		return addAni(true, theTarget, theDuration, theDelay, theFieldName, theEnd, defaultEasing, defaultTimeMode, defaultCallback);
+		return addAni(true, theTarget, theDuration, theDelay, theFieldName, theEnd, defaultEasing, defaultTimeMode, theTarget, defaultCallback);
 	}
 	
 	// --
@@ -246,7 +246,7 @@ public class Ani extends AniCore {
 	 * @return ani
 	 */
 	public static Ani to(Object theTarget, float theDuration, String theFieldName, float theEnd, Easing theEasing){
-		return addAni(false, theTarget, theDuration, 0.0f, theFieldName, theEnd, theEasing, defaultTimeMode, defaultCallback);
+		return addAni(false, theTarget, theDuration, 0.0f, theFieldName, theEnd, theEasing, defaultTimeMode, theTarget, defaultCallback);
 	}
 	
 	/**
@@ -260,7 +260,7 @@ public class Ani extends AniCore {
 	 * @return ani
 	 */
 	public static Ani from(Object theTarget, float theDuration, String theFieldName, float theEnd, Easing theEasing){
-		return addAni(true, theTarget, theDuration, 0.0f, theFieldName, theEnd, theEasing, defaultTimeMode, defaultCallback);
+		return addAni(true, theTarget, theDuration, 0.0f, theFieldName, theEnd, theEasing, defaultTimeMode, theTarget, defaultCallback);
 	}
 	
 	/**
@@ -275,7 +275,7 @@ public class Ani extends AniCore {
 	 * @return ani
 	 */
 	public static Ani to(Object theTarget, float theDuration, float theDelay, String theFieldName, float theEnd, Easing theEasing){
-		return addAni(false, theTarget, theDuration, theDelay, theFieldName, theEnd, theEasing, defaultTimeMode, defaultCallback);
+		return addAni(false, theTarget, theDuration, theDelay, theFieldName, theEnd, theEasing, defaultTimeMode, theTarget, defaultCallback);
 	}
 	
 	/**
@@ -290,7 +290,7 @@ public class Ani extends AniCore {
 	 * @return ani
 	 */
 	public static Ani from(Object theTarget, float theDuration, float theDelay,  String theFieldName, float theEnd, Easing theEasing){
-		return addAni(true, theTarget, theDuration, theDelay, theFieldName, theEnd, theEasing, defaultTimeMode, defaultCallback);
+		return addAni(true, theTarget, theDuration, theDelay, theFieldName, theEnd, theEasing, defaultTimeMode, theTarget, defaultCallback);
 	}
 	
 	// --
@@ -306,7 +306,23 @@ public class Ani extends AniCore {
 	 * @return ani
 	 */
 	public static Ani to(Object theTarget, float theDuration, String theFieldName, float theEnd, Easing theEasing, String theCallback){
-		return addAni(false, theTarget, theDuration, 0.0f, theFieldName, theEnd, theEasing, defaultTimeMode, theCallback);
+		return addAni(false, theTarget, theDuration, 0.0f, theFieldName, theEnd, theEasing, defaultTimeMode, theTarget, theCallback);
+	}
+        
+	/**
+	 * animate to a value over time to a certain value, returns an instance of ani
+	 * 
+	 * @param theTarget theTarget
+	 * @param theDuration theDuration
+	 * @param theFieldName theFieldName
+	 * @param theEnd theEnd
+	 * @param theEasing theEasing
+         * @param theCallbackObject theCallbackObject
+	 * @param theCallback theCallback
+	 * @return ani
+	 */
+	public static Ani to(Object theTarget, float theDuration, String theFieldName, float theEnd, Easing theEasing, Object theCallbackObject, String theCallback){
+		return addAni(false, theTarget, theDuration, 0.0f, theFieldName, theEnd, theEasing, defaultTimeMode, theCallbackObject, theCallback);
 	}
 	
 	/**
@@ -321,7 +337,22 @@ public class Ani extends AniCore {
 	 * @return ani
 	 */
 	public static Ani from(Object theTarget, float theDuration, String theFieldName, float theEnd, Easing theEasing, String theCallback){
-		return addAni(true, theTarget, theDuration, 0.0f, theFieldName, theEnd, theEasing, defaultTimeMode, theCallback);
+		return addAni(true, theTarget, theDuration, 0.0f, theFieldName, theEnd, theEasing, defaultTimeMode, theTarget, theCallback);
+	}
+	/**
+	 * animate from a value over time to a certain value, returns an instance of ani
+	 * 
+	 * @param theTarget theTarget
+	 * @param theDuration theDuration
+	 * @param theFieldName theFieldName
+	 * @param theEnd theEnd
+	 * @param theEasing theEasing
+         * @param theCallbackObject theCallbackObject
+	 * @param theCallback theCallback
+	 * @return ani
+	 */
+	public static Ani from(Object theTarget, float theDuration, String theFieldName, float theEnd, Easing theEasing, Object theCallbackObject, String theCallback){
+		return addAni(true, theTarget, theDuration, 0.0f, theFieldName, theEnd, theEasing, defaultTimeMode, theCallbackObject, theCallback);
 	}
 	
 	/**
@@ -337,7 +368,23 @@ public class Ani extends AniCore {
 	 * @return ani
 	 */
 	public static Ani to(Object theTarget, float theDuration, float theDelay, String theFieldName, float theEnd, Easing theEasing, String theCallback){
-		return addAni(false, theTarget, theDuration, theDelay, theFieldName, theEnd, theEasing, defaultTimeMode, theCallback);
+		return addAni(false, theTarget, theDuration, theDelay, theFieldName, theEnd, theEasing, defaultTimeMode, theTarget, theCallback);
+	}
+	/**
+	 * animate to a value over time to a certain value, returns an instance of ani
+	 * 
+	 * @param theTarget theTarget
+	 * @param theDuration theDuration
+	 * @param theDelay theDelay
+	 * @param theFieldName theFieldName
+	 * @param theEnd theEnd
+	 * @param theEasing theEasing
+	 * @param theCallbackObject theCallbackObject
+	 * @param theCallback theCallback
+	 * @return ani
+	 */
+	public static Ani to(Object theTarget, float theDuration, float theDelay, String theFieldName, float theEnd, Easing theEasing, Object theCallbackObject, String theCallback){
+		return addAni(false, theTarget, theDuration, theDelay, theFieldName, theEnd, theEasing, defaultTimeMode, theCallbackObject, theCallback);
 	}
 	
 	/**
@@ -353,7 +400,24 @@ public class Ani extends AniCore {
 	 * @return ani
 	 */
 	public static Ani from(Object theTarget, float theDuration, float theDelay,  String theFieldName, float theEnd, Easing theEasing, String theCallback){
-		return addAni(true, theTarget, theDuration, theDelay, theFieldName, theEnd, theEasing, defaultTimeMode, theCallback);
+		return addAni(true, theTarget, theDuration, theDelay, theFieldName, theEnd, theEasing, defaultTimeMode, theTarget, theCallback);
+	}
+        
+	/**
+	 * animate from a value over time to a certain value, returns an instance of ani
+	 * 
+	 * @param theTarget theTarget
+	 * @param theDuration theDuration
+	 * @param theDelay theDelay
+	 * @param theFieldName theFieldName
+	 * @param theEnd theEnd
+	 * @param theEasing theEasing
+         * @param theCallbackObject theCallbackObject
+	 * @param theCallback theCallback
+	 * @return ani
+	 */
+	public static Ani from(Object theTarget, float theDuration, float theDelay,  String theFieldName, float theEnd, Easing theEasing, Object theCallbackObject, String theCallback){
+		return addAni(true, theTarget, theDuration, theDelay, theFieldName, theEnd, theEasing, defaultTimeMode, theCallbackObject, theCallback);
 	}
 	
 	
@@ -367,7 +431,7 @@ public class Ani extends AniCore {
 	 * @return ani[]
 	 */
 	public static Ani[] to(Object theTarget, float theDuration, String thePropertyList){
-		return addAnis(false, theTarget, theDuration, 0.0f, thePropertyList, defaultEasing, defaultTimeMode, defaultCallback);
+		return addAnis(false, theTarget, theDuration, 0.0f, thePropertyList, defaultEasing, defaultTimeMode, theTarget, defaultCallback);
 	}
 	
 	/**
@@ -379,7 +443,7 @@ public class Ani extends AniCore {
 	 * @return ani[]
 	 */
 	public static Ani[] from(Object theTarget, float theDuration, String thePropertyList){
-		return addAnis(true, theTarget, theDuration, 0.0f, thePropertyList, defaultEasing, defaultTimeMode, defaultCallback);
+		return addAnis(true, theTarget, theDuration, 0.0f, thePropertyList, defaultEasing, defaultTimeMode, theTarget, defaultCallback);
 	}
 	
 	/**
@@ -392,7 +456,7 @@ public class Ani extends AniCore {
 	 * @return ani[]
 	 */
 	public static Ani[] to(Object theTarget, float theDuration, float theDelay, String thePropertyList){
-		return addAnis(false, theTarget, theDuration, theDelay, thePropertyList, defaultEasing, defaultTimeMode, defaultCallback);
+		return addAnis(false, theTarget, theDuration, theDelay, thePropertyList, defaultEasing, defaultTimeMode, theTarget, defaultCallback);
 	}
 	
 	/**
@@ -405,7 +469,7 @@ public class Ani extends AniCore {
 	 * @return ani[]
 	 */
 	public static Ani[] from(Object theTarget, float theDuration, float theDelay, String thePropertyList){
-		return addAnis(true, theTarget, theDuration, theDelay, thePropertyList, defaultEasing, defaultTimeMode, defaultCallback);
+		return addAnis(true, theTarget, theDuration, theDelay, thePropertyList, defaultEasing, defaultTimeMode, theTarget, defaultCallback);
 	}
 	
 	// --
@@ -419,7 +483,7 @@ public class Ani extends AniCore {
 	 * @return ani[]
 	 */
 	public static Ani[] to(Object theTarget, float theDuration, String thePropertyList, Easing theEasing){
-		return addAnis(false, theTarget, theDuration, 0.0f, thePropertyList, theEasing, defaultTimeMode, defaultCallback);
+		return addAnis(false, theTarget, theDuration, 0.0f, thePropertyList, theEasing, defaultTimeMode, theTarget, defaultCallback);
 	}
 	
 	/**
@@ -432,7 +496,7 @@ public class Ani extends AniCore {
 	 * @return ani[]
 	 */
 	public static Ani[] from(Object theTarget, float theDuration, String thePropertyList, Easing theEasing){
-		return addAnis(true, theTarget, theDuration, 0.0f, thePropertyList, theEasing, defaultTimeMode, defaultCallback);
+		return addAnis(true, theTarget, theDuration, 0.0f, thePropertyList, theEasing, defaultTimeMode, theTarget, defaultCallback);
 	}
 	
 	/**
@@ -446,7 +510,7 @@ public class Ani extends AniCore {
 	 * @return ani[]
 	 */
 	public static Ani[] to(Object theTarget, float theDuration, float theDelay, String thePropertyList, Easing theEasing){
-		return addAnis(false, theTarget, theDuration, theDelay, thePropertyList, theEasing, defaultTimeMode, defaultCallback);
+		return addAnis(false, theTarget, theDuration, theDelay, thePropertyList, theEasing, defaultTimeMode, theTarget, defaultCallback);
 	}
 	
 	/**
@@ -460,9 +524,40 @@ public class Ani extends AniCore {
 	 * @return ani[]
 	 */
 	public static Ani[] from(Object theTarget, float theDuration, float theDelay, String thePropertyList, Easing theEasing){
-		return addAnis(true, theTarget, theDuration, theDelay, thePropertyList, theEasing, defaultTimeMode, defaultCallback);
+		return addAnis(true, theTarget, theDuration, theDelay, thePropertyList, theEasing, defaultTimeMode, theTarget, defaultCallback);
 	}
 	
+	// --
+	/**
+	 * animate to a value over time to a certain value, returns an instance of ani
+	 * 
+	 * @param theTarget theTarget
+	 * @param theDuration theDuration
+	 * @param thePropertyList _property list
+	 * @param theEasing theEasing
+         * @param theCallbackObject theCallbackObject
+	 * @param theCallback theCallback
+	 * @return ani[]
+	 */
+	public static Ani[] to(Object theTarget, float theDuration, String thePropertyList, Easing theEasing, Object theCallbackObject, String theCallback){
+		return addAnis(false, theTarget, theDuration, 0.0f, thePropertyList, theEasing, defaultTimeMode, theCallbackObject, theCallback);
+	}
+	
+	/**
+	 * animate from a value over time to a certain value, returns an instance of ani
+	 * 
+	 * @param theTarget theTarget
+	 * @param theDuration theDuration
+	 * @param thePropertyList _property list
+	 * @param theEasing theEasing
+         * @param theCallbackObject theCallbackObject
+	 * @param theCallback theCallback
+	 * @return ani[]
+	 */
+	public static Ani[] from(Object theTarget, float theDuration, String thePropertyList, Easing theEasing, Object theCallbackObject, String theCallback){
+		return addAnis(true, theTarget, theDuration, 0.0f, thePropertyList, theEasing, defaultTimeMode, theCallbackObject, theCallback);
+	}
+        
 	// --
 	/**
 	 * animate to a value over time to a certain value, returns an instance of ani
@@ -475,7 +570,7 @@ public class Ani extends AniCore {
 	 * @return ani[]
 	 */
 	public static Ani[] to(Object theTarget, float theDuration, String thePropertyList, Easing theEasing, String theCallback){
-		return addAnis(false, theTarget, theDuration, 0.0f, thePropertyList, theEasing, defaultTimeMode, theCallback);
+		return addAnis(false, theTarget, theDuration, 0.0f, thePropertyList, theEasing, defaultTimeMode, theTarget, theCallback);
 	}
 	
 	/**
@@ -489,7 +584,7 @@ public class Ani extends AniCore {
 	 * @return ani[]
 	 */
 	public static Ani[] from(Object theTarget, float theDuration, String thePropertyList, Easing theEasing, String theCallback){
-		return addAnis(true, theTarget, theDuration, 0.0f, thePropertyList, theEasing, defaultTimeMode, theCallback);
+		return addAnis(true, theTarget, theDuration, 0.0f, thePropertyList, theEasing, defaultTimeMode, theTarget, theCallback);
 	}
 	
 	/**
@@ -500,11 +595,12 @@ public class Ani extends AniCore {
 	 * @param theDelay theDelay
 	 * @param thePropertyList _property list
 	 * @param theEasing theEasing
+         * @param theCallbackObject theCallbackObject
 	 * @param theCallback theCallback
 	 * @return ani[]
 	 */
-	public static Ani[] to(Object theTarget, float theDuration, float theDelay, String thePropertyList, Easing theEasing, String theCallback){
-		return addAnis(false, theTarget, theDuration, theDelay, thePropertyList, theEasing, defaultTimeMode, theCallback);
+	public static Ani[] to(Object theTarget, float theDuration, float theDelay, String thePropertyList, Easing theEasing, Object theCallbackObject, String theCallback){
+		return addAnis(false, theTarget, theDuration, theDelay, thePropertyList, theEasing, defaultTimeMode, theCallbackObject, theCallback);
 	}
 	
 	/**
@@ -515,17 +611,18 @@ public class Ani extends AniCore {
 	 * @param theDelay theDelay
 	 * @param thePropertyList _property list
 	 * @param theEasing theEasing
+         * @param theCallbackObject theCallbackObject
 	 * @param theCallback theCallback
 	 * @return ani[]
 	 */
-	public static Ani[] from(Object theTarget, float theDuration, float theDelay, String thePropertyList, Easing theEasing, String theCallback){
-		return addAnis(true, theTarget, theDuration, theDelay, thePropertyList, theEasing, defaultTimeMode, theCallback);
+	public static Ani[] from(Object theTarget, float theDuration, float theDelay, String thePropertyList, Easing theEasing, Object theCallbackObject, String theCallback){
+		return addAnis(true, theTarget, theDuration, theDelay, thePropertyList, theEasing, defaultTimeMode, theCallbackObject, theCallback);
 	}
 	
 	
 	// create a new Ani instance and add to lookup
 	// or overwrite an existing Ani with new parameters
-	private static Ani addAni(boolean theReverse, Object theTarget, float theDuration, float theDelay, String theFieldName, float theEnd, Easing theEasing, String theTimeMode, String theCallback){
+	private static Ani addAni(boolean theReverse, Object theTarget, float theDuration, float theDelay, String theFieldName, float theEnd, Easing theEasing, String theTimeMode, Object theCallbackObject, String theCallback){
 		cleanAnis();
 		//String id = theTarget.toString() + "_" + theFieldName;
 		String id = System.identityHashCode(theTarget) + "_" + theFieldName;
@@ -552,7 +649,7 @@ public class Ani extends AniCore {
 		}
 		// create new Ani
 		else {
-			Ani newAni = new Ani(theTarget, theDuration, theDelay, theFieldName, theEnd, theEasing, theCallback);
+			Ani newAni = new Ani(theTarget, theDuration, theDelay, theFieldName, theEnd, theEasing, theCallbackObject, theCallback);
 			if (theReverse) newAni.reverse();
 			anisLookup.put(id, newAni);
 			return newAni;
@@ -562,7 +659,7 @@ public class Ani extends AniCore {
 	// property list style
 	// create multiple new Ani instance at the same time and add to lookup
 	// or overwrite an existing Ani with new parameters
-	private static Ani[] addAnis(boolean theReverse, Object theTarget, float theDuration, float theDelay, String thePropertyList, Easing theEasing, String theTimeMode, String theCallback){
+	private static Ani[] addAnis(boolean theReverse, Object theTarget, float theDuration, float theDelay, String thePropertyList, Easing theEasing, String theTimeMode, Object theCallbackObject, String theCallback){
 		  String[] propertyList = PApplet.split(thePropertyList,',');
 		  Ani[] tmpAnis = new Ani[propertyList.length];
 		  for (int i = 0; i < propertyList.length; i++) {
@@ -570,7 +667,7 @@ public class Ani extends AniCore {
 			  if (p.length == 2) {
 				  String fieldName = p[0];
 				  float end = Float.parseFloat(p[1]);
-				  tmpAnis[i] = addAni(theReverse, theTarget, theDuration, theDelay, fieldName, end, theEasing, theTimeMode, theCallback);
+				  tmpAnis[i] = addAni(theReverse, theTarget, theDuration, theDelay, fieldName, end, theEasing, theTimeMode, theCallbackObject, theCallback);
 			  }
 		  }  
 		return tmpAnis;
