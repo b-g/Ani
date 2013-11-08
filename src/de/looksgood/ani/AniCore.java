@@ -216,7 +216,7 @@ public class AniCore implements AniConstants {
          * 
          * @param theCallbackObject  the object whose callback methods are called
          */
-        public Object setCallbackObject() {
+        public Object getCallbackObject() {
             return callbackObject;
         }        
         
