@@ -169,6 +169,23 @@ public class Ani extends AniCore {
 	 * @param theFieldName theFieldName
 	 * @param theEnd theEnd
 	 * @param theEasing theEasing
+         * @param theCallbackObject theCallbackObject
+	 * @param theCallback theCallback
+	 */
+	public Ani(Object theTarget, float theDuration, float theDelay, String theFieldName, float theEnd, Easing theEasing, String theCallback) {
+		super(papplet(), defaultAutostartMode, theTarget, theDuration, theDelay, theFieldName, theEnd, theEasing, defaultTimeMode, theTarget, theCallback);
+	}
+        
+	/**
+	 * Instantiates a new ani.
+	 * 
+	 * @param theTarget theTarget
+	 * @param theDuration theDuration
+	 * @param theDelay theDelay
+	 * @param theFieldName theFieldName
+	 * @param theEnd theEnd
+	 * @param theEasing theEasing
+         * @param theCallbackObject theCallbackObject
 	 * @param theCallback theCallback
 	 */
 	public Ani(Object theTarget, float theDuration, float theDelay, String theFieldName, float theEnd, Easing theEasing, Object theCallbackObject, String theCallback) {
