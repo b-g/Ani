@@ -1,6 +1,6 @@
 /*
 Ani (a processing animation library) 
-Copyright (c) 2010 Benedikt Gro§
+Copyright (c) 2010 Benedikt Groï¿½
 
 http://www.looksgood.de/libraries/Ani
 
@@ -68,6 +68,7 @@ public class AniCore implements AniConstants {
 
 	private Easing easing;
 	
+        private Object callbackObject;
 	private Method callbackStartMethod;
 	private Class<?> callbackStartParameterClass;
 	private Method callbackFinishMethod;
@@ -100,14 +101,16 @@ public class AniCore implements AniConstants {
 	 * @param theEnd the end
 	 * @param theEasing the easing
 	 * @param theTimeMode the time mode
+	 * @param theCallbackObject the object to call the callback method upon
 	 * @param theCallback the callback
 	 */
 	public AniCore(PApplet thePapplet, String theAutostart, Object theTargetObject,
 			float theDurationEasing, float theDurationDelay,
 			String theTargetObjectFieldName, float theEnd, Easing theEasing,
-			String theTimeMode, String theCallback) {
+			String theTimeMode, Object theCallbackObject, String theCallback) {
 
 		papplet = thePapplet;
+		callbackObject = theCallbackObject;
 		targetObject = theTargetObject;
 		// generate unique id
 		targetName = targetObject.toString();
@@ -207,6 +210,24 @@ public class AniCore implements AniConstants {
 		begin = theBegin;
 		change = end - begin;
 	}
+        
+        /**
+         * Gets the object to invoke the callback method on
+         * 
+         * @param theCallbackObject  the object whose callback methods are called
+         */
+        public Object getCallbackObject() {
+            return callbackObject;
+        }        
+        
+        /**
+         * Sets the object to invoke the callback method on
+         * 
+         * @param theCallbackObject  the object whose callback methods are called
+         */
+        public void setCallbackObject(Object theCallbackObject) {
+            callbackObject = theCallbackObject;
+        }
 
 	/**
 	 * setup the callback methods: onStart, onEnd, onDelayEnd and onUpdate
@@ -227,7 +248,7 @@ public class AniCore implements AniConstants {
 						// -- check and find methods --
 						String targetMethodName = p[1];
 						boolean foundMethod = false;
-						Class<?> targetClass = targetObject.getClass();
+						Class<?> targetClass = callbackObject.getClass();
 						Method targetMethod = null;
 						Class<?> tagetMethodParameterClass = null;
 
@@ -295,7 +316,7 @@ public class AniCore implements AniConstants {
 			try {
 				Object[] args = (callbackStartParameterClass == null) ? new Object[] {}
 				: new Object[] { this };
-				callbackStartMethod.invoke(targetObject, args);
+				callbackStartMethod.invoke(callbackObject, args);
 			} catch (Exception e) {
 				System.out.println(ANI_DEBUG_PREFIX+" Error @ AniCore -> dispatchOnStart(). "+e);
 			}
@@ -307,7 +328,7 @@ public class AniCore implements AniConstants {
 			try {
 				Object[] args = (callbackFinishParameterClass == null) ? new Object[] {}
 				: new Object[] { this };
-				callbackFinishMethod.invoke(targetObject, args);
+				callbackFinishMethod.invoke(callbackObject, args);
 			} catch (Exception e) {
 				System.out.println(ANI_DEBUG_PREFIX+" Error @ AniCore -> dispatchOnFinish(). "+e);
 			}
@@ -319,7 +340,7 @@ public class AniCore implements AniConstants {
 			try {
 				Object[] args = (callbackUpdateParameterClass == null) ? new Object[] {}
 				: new Object[] { this };
-				callbackUpdateMethod.invoke(targetObject, args);
+				callbackUpdateMethod.invoke(callbackObject, args);
 			} catch (Exception e) {
 				System.out.println(ANI_DEBUG_PREFIX+" Error @ AniCore -> dispatchOnUpdate(). "+e);
 			}
@@ -331,7 +352,7 @@ public class AniCore implements AniConstants {
 			try {
 				Object[] args = (callbackDelayParameterClass == null) ? new Object[] {}
 				: new Object[] { this };
-				callbackDelayMethod.invoke(targetObject, args);
+				callbackDelayMethod.invoke(callbackObject, args);
 			} catch (Exception e) {
 				System.out.println(ANI_DEBUG_PREFIX+" Error @ AniCore -> dispatchOnFinish(). "+e);
 			}
