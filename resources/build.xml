@@ -35,13 +35,13 @@
 	<property name="author" value="Benedikt Gross"/>
 	
 <!-- #### (6) which copyright?  edit value.  #### -->
-	<property name="copyright" value="(c) 2012"/>
+	<property name="copyright" value="(c) 2013"/>
 
 <!-- #### (7) give your library a name. edit value.  #### -->
 	<property name="libraryName"  value="Ani"/>
 	
 <!-- #### (8) give your library a name. edit value.   #### -->
-	<property name="versionNumber"  value="2.5"/>
+	<property name="versionNumber"  value="2.6"/>
 	
 <!-- #### (9) your contact url. edit value. #### -->
 	<property name="yourLink"  value="http://www.looksgood.de/" />
@@ -50,7 +50,7 @@
 	<property name="keywords"  value="animation, easing, tween, timeline, sequence, motion, robert penner, java reflection" />
 	
 <!-- #### (11) a comma separated list of platforms the library has been tested. edit value. #### -->
-	<property name="tested:platform"  value="osx 10.7, 10.6, 10.5" />
+	<property name="tested:platform"  value="osx 10.8, 10.7, 10.6, 10.5" />
 	
 <!-- #### (12) the processing version this library has been tested with. edit value. #### -->
 	<property name="tested:processingVersion"  value="1.5.1" />

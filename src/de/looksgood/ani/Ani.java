@@ -1,6 +1,6 @@
 /*
 Ani (a processing animation library) 
-Copyright (c) 2010 Benedikt Groï¿½
+Copyright (c) 2010 Benedikt Gro§
 
 http://www.looksgood.de/libraries/Ani
 
@@ -169,7 +169,7 @@ public class Ani extends AniCore {
 	 * @param theFieldName theFieldName
 	 * @param theEnd theEnd
 	 * @param theEasing theEasing
-         * @param theCallbackObject theCallbackObject
+	 * @param theCallbackObject theCallbackObject
 	 * @param theCallback theCallback
 	 */
 	public Ani(Object theTarget, float theDuration, float theDelay, String theFieldName, float theEnd, Easing theEasing, String theCallback) {
@@ -185,7 +185,7 @@ public class Ani extends AniCore {
 	 * @param theFieldName theFieldName
 	 * @param theEnd theEnd
 	 * @param theEasing theEasing
-         * @param theCallbackObject theCallbackObject
+	 * @param theCallbackObject theCallbackObject
 	 * @param theCallback theCallback
 	 */
 	public Ani(Object theTarget, float theDuration, float theDelay, String theFieldName, float theEnd, Easing theEasing, Object theCallbackObject, String theCallback) {
@@ -334,7 +334,7 @@ public class Ani extends AniCore {
 	 * @param theFieldName theFieldName
 	 * @param theEnd theEnd
 	 * @param theEasing theEasing
-         * @param theCallbackObject theCallbackObject
+	 * @param theCallbackObject theCallbackObject
 	 * @param theCallback theCallback
 	 * @return ani
 	 */
@@ -364,7 +364,7 @@ public class Ani extends AniCore {
 	 * @param theFieldName theFieldName
 	 * @param theEnd theEnd
 	 * @param theEasing theEasing
-         * @param theCallbackObject theCallbackObject
+	 * @param theCallbackObject theCallbackObject
 	 * @param theCallback theCallback
 	 * @return ani
 	 */
@@ -429,7 +429,7 @@ public class Ani extends AniCore {
 	 * @param theFieldName theFieldName
 	 * @param theEnd theEnd
 	 * @param theEasing theEasing
-         * @param theCallbackObject theCallbackObject
+	 * @param theCallbackObject theCallbackObject
 	 * @param theCallback theCallback
 	 * @return ani
 	 */
@@ -552,7 +552,7 @@ public class Ani extends AniCore {
 	 * @param theDuration theDuration
 	 * @param thePropertyList _property list
 	 * @param theEasing theEasing
-         * @param theCallbackObject theCallbackObject
+	 * @param theCallbackObject theCallbackObject
 	 * @param theCallback theCallback
 	 * @return ani[]
 	 */
@@ -567,7 +567,7 @@ public class Ani extends AniCore {
 	 * @param theDuration theDuration
 	 * @param thePropertyList _property list
 	 * @param theEasing theEasing
-         * @param theCallbackObject theCallbackObject
+	 * @param theCallbackObject theCallbackObject
 	 * @param theCallback theCallback
 	 * @return ani[]
 	 */
@@ -612,7 +612,7 @@ public class Ani extends AniCore {
 	 * @param theDelay theDelay
 	 * @param thePropertyList _property list
 	 * @param theEasing theEasing
-         * @param theCallbackObject theCallbackObject
+	 * @param theCallbackObject theCallbackObject
 	 * @param theCallback theCallback
 	 * @return ani[]
 	 */
@@ -628,7 +628,7 @@ public class Ani extends AniCore {
 	 * @param theDelay theDelay
 	 * @param thePropertyList _property list
 	 * @param theEasing theEasing
-         * @param theCallbackObject theCallbackObject
+	 * @param theCallbackObject theCallbackObject
 	 * @param theCallback theCallback
 	 * @return ani[]
 	 */
