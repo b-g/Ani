@@ -1,7 +1,10 @@
 --------------------------------------------------------------------------
 Ani 2.x - ??
 
+
 New
++ CallbackObject property for callbacks on objects other than its own
+  (pull request by ZeroMax-dev. Many Thanks!)
 + examples/Ani_in_Classes_Start_Delays
 
 
