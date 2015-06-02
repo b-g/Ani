@@ -1,6 +1,6 @@
 /*
 Ani (a processing animation library) 
-Copyright (c) 2010 Benedikt Gro�
+Copyright (c) 2010 Benedikt Groß
 
 http://www.looksgood.de/libraries/Ani
 
@@ -214,7 +214,7 @@ public class AniCore implements AniConstants {
         /**
          * Gets the object to invoke the callback method on
          * 
-         * @param theCallbackObject  the object whose callback methods are called
+         * @return theCallbackObject  the object whose callback methods are called
          */
         public Object getCallbackObject() {
             return callbackObject;
@@ -363,17 +363,19 @@ public class AniCore implements AniConstants {
 	private void printSecurityWarning(Exception theE) {
 		// AccessControlException required for applets.
 		System.out.print(ANI_DEBUG_PREFIX + " Error @ AniCore. ");
+		/*
+		PApplet.online is deprecated
 		if (papplet.online) {
 			System.out.println("AccessControlException.\n"
 					+ "you are probably running in applet mode.\n"
 					+ "make sure fields and methods which you want to \n"
 					+ "access in your processing code are public.\n");
-		}
+		}*/
 		System.out.println(theE);
 	}
 
 	/**
-	 * No need to call ever this method. Only public to use the registerPre() mechanism
+	 * No need to call ever this method. Only public to use the registerMethod() mechanism
 	 */
 	public void pre() {
 		if (isPlaying) {
@@ -387,7 +389,7 @@ public class AniCore implements AniConstants {
 	public void start() {
 		// register pre()
 		if (!isRegistered) {
-			papplet.registerPre(this);
+			papplet.registerMethod("pre", this);
 			isRegistered = true;
 			repeatNumber = 1;
 			dispatchOnStart();
@@ -407,7 +409,7 @@ public class AniCore implements AniConstants {
 		isEnded = true;
 		// unregister pre()
 		if (isRegistered) {
-			papplet.unregisterPre(this);
+			papplet.unregisterMethod("pre", this);
 			isRegistered = false;
 		}
 		dispatchOnEnd();
@@ -494,7 +496,7 @@ public class AniCore implements AniConstants {
 	 */
 	public void resume() {
 		if (!isRegistered) {
-			papplet.registerPre(this);
+			papplet.registerMethod("this", this);
 			isRegistered = true;
 		}
 		if (!isPlaying && !isEnded) {

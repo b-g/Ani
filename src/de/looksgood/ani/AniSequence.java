@@ -1,6 +1,6 @@
 /*
 Ani (a processing animation library) 
-Copyright (c) 2010 Benedikt Groß
+Copyright (c) 2010 Benedikt Gro√ü
 
 http://www.looksgood.de/libraries/Ani
 
@@ -131,11 +131,11 @@ public class AniSequence {
 	 */
 	public AniSequence(PApplet thePapplet){
 		papplet = thePapplet;
-		papplet.registerPre(this);
+		papplet.registerMethod("pre", this);
 	}
 	
 	/**
-	 * No need to call ever this method. Only public to use the registerPre() mechanism
+	 * No need to call ever this method. Only public to use the registerMethod() mechanism
 	 */
 	public void pre() {
 		if (isPlaying) {
