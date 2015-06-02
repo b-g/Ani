@@ -78,7 +78,7 @@ public class Ani extends AniCore {
 		System.out.println("Ani "
 			+ VERSION
 			+ " "
-			+ "infos, feedback @ http://www.looksgood.de/libraries/Ani");
+			+ "infos, feedback @ http://benedikt-gross.de/libraries/Ani/");
 	}
 
 	/**

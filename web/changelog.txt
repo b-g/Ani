@@ -1,6 +1,14 @@
 --------------------------------------------------------------------------
-Ani 2.x - ??
+Ani 2.7 - 2 June 2015
 
+New
++ Made Ani compatible with the upcoming Processing 3.0
+  (pull request by Jens de Boer/jnsdbr and a gentle push by 
+  Benjamin Stephan/b3nson. Many thanks!)
+
+
+--------------------------------------------------------------------------
+Ani 2.6 - 8 November 2013
 
 New
 + CallbackObject property for callbacks on objects other than its own
