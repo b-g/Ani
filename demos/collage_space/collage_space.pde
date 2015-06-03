@@ -18,6 +18,7 @@
 
 import processing.opengl.*; 
 import de.looksgood.ani.*;
+import java.util.Calendar;
 
 ArrayList layer1Images, layer2Images, layer3Images;
 ArrayList layer1Items, layer2Items, layer3Items;
@@ -39,9 +40,9 @@ void setup() {
   Ani.init(this);
 
   // ------ load images ------
-  layer1Images = loadImages(sketchPath+"/data/sky/");
-  layer2Images = loadImages(sketchPath+"/data/paper/");
-  layer3Images = loadImages(sketchPath+"/data/urban/");
+  layer1Images = loadImages(sketchPath()+"/data/sky/");
+  layer2Images = loadImages(sketchPath()+"/data/paper/");
+  layer3Images = loadImages(sketchPath()+"/data/urban/");
 
   // create fist layer, press 2-3 for more
   editCollageItems(layer1Items, layer1Images, (int)random(75,250), 0.25,1);
